@@ -383,7 +383,7 @@ export class DataTableBodyComponent implements OnInit, OnDestroy {
    * 
    * @memberOf DataTableBodyComponent
    */
-  getDetailRowHeight(row?: any, index?: any): number {
+  getDetailRowHeight = (row?: any, index?: any): number => {
     if (!this.rowDetail) return 0;
     const rowHeight = this.rowDetail.rowHeight;
     return typeof rowHeight === 'function' ? rowHeight(row, index) : rowHeight;
@@ -483,7 +483,7 @@ export class DataTableBodyComponent implements OnInit, OnDestroy {
     // Initialize the tree only if there are rows inside the tree.
     if (this.rows && this.rows.length) {
       this.rowHeightsCache.initCache(
-        this.rows, this.rowHeight, this.getDetailRowHeight());
+        this.rows, this.rowHeight, this.getDetailRowHeight);
     }
   }
 
